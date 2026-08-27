@@ -1,0 +1,22 @@
+name: quality-gate
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover -s tests -v
+      - name: Run demo and assert budget policy blocks
+        shell: bash
+        run: |
+          set +e
+          python -m querybudget demo
+          code=$?
+          test "$code" -eq 1
+
