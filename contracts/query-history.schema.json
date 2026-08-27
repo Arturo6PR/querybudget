@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://querybudget.dev/contracts/query-history.schema.json",
+  "title": "Warehouse query history record",
+  "type": "object",
+  "required": ["query_id", "team", "warehouse", "sql", "bytes_scanned", "cost_usd", "cache_hit"],
+  "properties": {
+    "query_id": {"type": "string", "minLength": 1},
+    "team": {"type": "string", "minLength": 1},
+    "warehouse": {"type": "string", "minLength": 1},
+    "sql": {"type": "string", "minLength": 1},
+    "bytes_scanned": {"type": "integer", "minimum": 0},
+    "cost_usd": {"type": "number", "minimum": 0},
+    "cache_hit": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}
+

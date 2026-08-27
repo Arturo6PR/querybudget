@@ -1,0 +1,12 @@
+{
+  "unbounded_scan_bytes": 100000000000,
+  "high_cost_usd": 10.0,
+  "budget_warning_ratio": 0.8,
+  "savings_rates": {
+    "UNBOUNDED_SCAN": 0.35,
+    "REPEATED_QUERY": 0.25,
+    "SELECT_STAR": 0.15,
+    "HIGH_COST": 0.10
+  }
+}
+

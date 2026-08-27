@@ -1,0 +1,12 @@
+[project]
+name = "querybudget"
+version = "0.1.0"
+description = "Explainable warehouse FinOps analyzer"
+requires-python = ">=3.10"
+
+[project.scripts]
+querybudget = "querybudget.cli:main"
+
+[tool.ruff]
+line-length = 100
+
